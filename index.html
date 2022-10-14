@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <h1><span class="text-primary">T</span>i<span class="text-secondary">c</span> <span
+      class="text-primary">T</span>a<span class="text-secondary">c</span> <span class="text-primary">T</span>o<span
+      class="text-secondary">e</span></h1>
+  <div class="initial-screen">
+    <button type="button" class="btn bg-primary" id="1player">Player vs CPU</button>
+    <button type="button" class="btn bg-secondary" id="2players">Player 1 vs Player 2</button>
+    <form id="players-names" class="hidden">
+      <div class="player1-input">
+        <label for="player1-name">Player 1's name</label>
+        <div class="form-control">
+          <input type="text" name="" id="player1-name" required>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="22.3136" height="5.93052" rx="2"
+              transform="matrix(0.708349 -0.705862 0.706871 0.707343 0.00195312 15.7502)" fill="#8ECAE6" />
+            <rect width="22.3136" height="5.93053" rx="2"
+              transform="matrix(0.707953 0.706259 -0.707953 0.706259 4.19849 0.0522461)" fill="#8ECAE6" />
+          </svg>
+        </div>
+      </div>
+      <div class="player2-input">
+        <label for="player2-name">Player 2's name</label>
+        <div class="form-control">
+          <input type="text" name="" id="player2-name" required>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="7.5" stroke="#FF5A5F" stroke-width="5" />
+          </svg>
+        </div>
+      </div>
+      <button type="submit" class="btn bg-accent">Start Game</button>
+    </form>
+  </div>
+  <div class="game hidden">
+    <div class="game-header">
+      <div class="current-turn">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+          class="current-player-mark" id="current-x">
+          <rect width="22.3136" height="5.93052" rx="2"
+            transform="matrix(0.708349 -0.705862 0.706871 0.707343 0.00195312 15.7502)" fill="#9ba1b6" />
+          <rect width="22.3136" height="5.93053" rx="2"
+            transform="matrix(0.707953 0.706259 -0.707953 0.706259 4.19849 0.0522461)" fill="#9ba1b6" />
+        </svg>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+          class="current-player-mark hidden" id="current-o">
+          <circle cx="10" cy="10" r="7.5" stroke="#9ba1b6" stroke-width="5" />
+        </svg>
+        TURN
+      </div>
+      <button type="button" id="restart">Restart</button>
+    </div>
+    <div class="gameboard">
+      <button id="1" class="space"><img src="" alt="" class="player-mark hidden"></button>
+      <button id="2" class="space"><img src="" alt="" class="player-mark hidden"></button>
+      <button id="3" class="space"><img src="" alt="" class="player-mark hidden"></button>
+      <button id="4" class="space"><img src="" alt="" class="player-mark hidden"></button>
+      <button id="5" class="space"><img src="" alt="" class="player-mark hidden"></button>
+      <button id="6" class="space"><img src="" alt="" class="player-mark hidden"></button>
+      <button id="7" class="space"><img src="" alt="" class="player-mark hidden">
+      </button>
+      <button id="8" class="space"><img src="" alt="" class="player-mark hidden"></button>
+      <button id="9" class="space"><img src="" alt="" class="player-mark hidden"></but>
+    </div>
+    <div class="scores">
+      <div class="player1-score bg-primary">
+        <p>X (P1)</p>
+        <p class="score">0</p>
+      </div>
+      <div class="ties bg-accent">
+        <p>TIES</p>
+        <p class="score">18</p>
+      </div>
+      <div class="player2-score bg-secondary">
+        <p>O (P2)</p>
+        <p class="score">0</p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>Made with <span class="text-secondary">&#9825;</span> by <a href="https://github.com/julianachagas"
+        target="_blank">Juliana Chagas</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
