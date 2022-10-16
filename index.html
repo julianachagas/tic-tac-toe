@@ -14,13 +14,13 @@
       class="text-primary">T</span>a<span class="text-secondary">c</span> <span class="text-primary">T</span>o<span
       class="text-secondary">e</span></h1>
   <div class="initial-screen">
-    <button type="button" class="btn bg-primary" id="1player">Player vs CPU</button>
-    <button type="button" class="btn bg-secondary" id="2players">Player 1 vs Player 2</button>
+    <button type="button" class="btn bg-primary" id="playerVsCpu">Player vs CPU</button>
+    <button type="button" class="btn bg-secondary" id="player1Vsplayer2">Player 1 vs Player 2</button>
     <form id="players-names" class="hidden">
       <div class="player1-input">
         <label for="player1-name">Player 1's name</label>
         <div class="form-control">
-          <input type="text" name="" id="player1-name" required>
+          <input type="text" name="" id="player1-name">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="22.3136" height="5.93052" rx="2"
               transform="matrix(0.708349 -0.705862 0.706871 0.707343 0.00195312 15.7502)" fill="#8ECAE6" />
@@ -32,13 +32,14 @@
       <div class="player2-input">
         <label for="player2-name">Player 2's name</label>
         <div class="form-control">
-          <input type="text" name="" id="player2-name" required>
+          <input type="text" name="" id="player2-name">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="10" cy="10" r="7.5" stroke="#FF5A5F" stroke-width="5" />
           </svg>
         </div>
       </div>
       <button type="submit" class="btn bg-accent">Start Game</button>
+      <p class="form-feedback hidden">Please, enter the name(s) of the player(s)!</p>
     </form>
   </div>
   <div class="game hidden">
@@ -57,7 +58,7 @@
         </svg>
         TURN
       </div>
-      <button type="button" id="restart">Restart</button>
+      <button type="button" id="restart" class="bg-accent">Restart</button>
     </div>
     <div class="gameboard">
       <button id="1" class="space"><img src="" alt="" class="player-mark hidden"></button>
@@ -72,15 +73,15 @@
       <button id="9" class="space"><img src="" alt="" class="player-mark hidden"></but>
     </div>
     <div class="scores">
-      <div class="player1-score bg-primary">
+      <div class="x-score bg-primary">
         <p>X (P1)</p>
         <p class="score">0</p>
       </div>
       <div class="ties bg-accent">
         <p>TIES</p>
-        <p class="score">18</p>
+        <p class="score">0</p>
       </div>
-      <div class="player2-score bg-secondary">
+      <div class="o-score bg-secondary">
         <p>O (P2)</p>
         <p class="score">0</p>
       </div>
@@ -90,7 +91,16 @@
     <p>Made with <span class="text-secondary">&#9825;</span> by <a href="https://github.com/julianachagas"
         target="_blank">Juliana Chagas</a></p>
   </footer>
-
+  <div class="modal-wrapper hidden" id="result-modal">
+    <div class="modal">
+      <p class="congrats-message">CONGRATS!</p>
+      <p class="result-message"></p>
+      <div class="modal-buttons">
+        <button type="button" class="btn bg-accent" id="quit">Quit</button>
+        <button type="button" class="btn bg-primary" id="next-round">Next Round</button>
+      </div>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 
