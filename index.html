@@ -15,8 +15,8 @@
       class="text-secondary">e</span></h1>
   <div class="initial-screen">
     <button type="button" class="btn bg-primary" id="playerVsCpu">Player vs CPU</button>
-    <button type="button" class="btn bg-secondary" id="player1Vsplayer2">Player 1 vs Player 2</button>
-    <form id="players-names" class="hidden">
+    <button type="button" class="btn bg-secondary" id="player1VsPlayer2">Player 1 vs Player 2</button>
+    <form id="players-names" class="hidden-transform">
       <div class="player1-input">
         <label for="player1-name">Player 1's name</label>
         <div class="form-control">
@@ -44,6 +44,7 @@
   </div>
   <div class="game hidden">
     <div class="game-header">
+      <button type="button" id="restart" class="bg-accent">Restart</button>
       <div class="current-turn">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
           class="current-player-mark" id="current-x">
@@ -58,19 +59,19 @@
         </svg>
         TURN
       </div>
-      <button type="button" id="restart" class="bg-accent">Restart</button>
+      <button type="button" id="new-game" class="bg-accent">New Game</button>
     </div>
     <div class="gameboard">
-      <button id="1" class="space"><img src="" alt="" class="player-mark hidden"></button>
-      <button id="2" class="space"><img src="" alt="" class="player-mark hidden"></button>
-      <button id="3" class="space"><img src="" alt="" class="player-mark hidden"></button>
-      <button id="4" class="space"><img src="" alt="" class="player-mark hidden"></button>
-      <button id="5" class="space"><img src="" alt="" class="player-mark hidden"></button>
-      <button id="6" class="space"><img src="" alt="" class="player-mark hidden"></button>
-      <button id="7" class="space"><img src="" alt="" class="player-mark hidden">
+      <button class="space" data-position="0"><img src="" alt="" class="player-mark hidden"></button>
+      <button class="space" data-position="1"><img src="" alt="" class="player-mark hidden"></button>
+      <button class="space" data-position="2"><img src="" alt="" class="player-mark hidden"></button>
+      <button class="space" data-position="3"><img src="" alt="" class="player-mark hidden"></button>
+      <button class="space" data-position="4"><img src="" alt="" class="player-mark hidden"></button>
+      <button class="space" data-position="5"><img src="" alt="" class="player-mark hidden"></button>
+      <button class="space" data-position="6"><img src="" alt="" class="player-mark hidden">
       </button>
-      <button id="8" class="space"><img src="" alt="" class="player-mark hidden"></button>
-      <button id="9" class="space"><img src="" alt="" class="player-mark hidden"></but>
+      <button class="space" data-position="7"><img src="" alt="" class="player-mark hidden"></button>
+      <button class="space" data-position="8"><img src="" alt="" class="player-mark hidden"></but>
     </div>
     <div class="scores">
       <div class="x-score bg-primary">
