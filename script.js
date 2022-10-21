@@ -78,6 +78,15 @@ const displayStoredGame = () => {
     renderScoreBoard();
     document.querySelector('.o-score').firstElementChild.textContent =
       game.gameChoice === 'player1VsPlayer2' ? 'O (P2)' : 'O (CPU)';
+    if (game.currentPlayer === 'o' && game.gameChoice === 'playerVsCpu') {
+      setTimeout(() => {
+        computerMove();
+        const isGameOver = checkResult();
+        if (!isGameOver) {
+          switchPlayer();
+        }
+      }, 600);
+    }
   }
 };
 
@@ -210,7 +219,7 @@ const displayModal = winner => {
       message.classList.add(`player-${winner.mark}`);
     } else {
       resultModal.querySelector('.congrats-message').classList.add('hidden');
-      message.textContent = `You lost :(`;
+      message.textContent = `Oh no, you lost :(`;
     }
   } else {
     resultModal.querySelector('.congrats-message').classList.add('hidden');
@@ -265,8 +274,8 @@ const playerMove = button => {
   }
 };
 
-const getPossibleMove = array => {
-  let possibleMove = null;
+const getWinningMove = array => {
+  let winningMove = null;
   // loop through the winning combinations
   for (let combination of winningCombinations) {
     let matches = 0;
@@ -281,13 +290,13 @@ const getPossibleMove = array => {
           const missingMove = combination.find(item => !array.includes(item));
           // check if this index is empty in the gameboard
           if (game.gameboard[missingMove] === '') {
-            possibleMove = missingMove;
+            winningMove = missingMove;
           }
         }
       }
     });
   }
-  return possibleMove;
+  return winningMove;
 };
 
 const getPossibleBestMove = () => {
@@ -304,10 +313,10 @@ const getPossibleBestMove = () => {
     })
     .filter(item => item !== 'x' && item !== '');
 
-  // check if CPU can win the game in this turn and get the index
-  const cpuWin = getPossibleMove(playerOIndexes);
-  // check if player X is about to win, get the index to stop player X from winning
-  const stopXplayer = getPossibleMove(playerXIndexes);
+  //  get the index of the winning move if CPU can win the game in this turn
+  const cpuWin = getWinningMove(playerOIndexes);
+  // get the index where player X can win, CPU can stop player X
+  const stopXplayer = getWinningMove(playerXIndexes);
   return cpuWin ?? stopXplayer;
 };
 
