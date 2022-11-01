@@ -1,6 +1,6 @@
 # Tic Tac Toe
 
-This project is a Tic Tac Toe game created using HTML, CSS/SAAS, and JavaScript.
+This project is a Tic Tac Toe game created using HTML, CSS/SAAS, and JavaScript. It's possible to play the game against the computer or against another player. The game state is saved in local storage so that the user can continue the current game if they refresh the page. 
 
 ## 🔗 Link
 
@@ -17,8 +17,8 @@ This project is a Tic Tac Toe game created using HTML, CSS/SAAS, and JavaScript.
 
 - Users are able to play the game either solo vs the computer or multiplayer against another player
 - Users are able to enter their names
-- Game state is saved in the browser so that it’s preserved if the player refreshes their browser
-- Users are able to restart the current round and reset the game board
+- Game state is saved in local storage so that it’s preserved if the player refreshes their browser
+- Users are able to restart the current round: the game board will be reseted
 - Users are able to go back to the initial screen and start a new game
 - 2 players: the first turn of the first round is always played by whoever is playing as X. For every following round, the first turn alternates between O and X
 - The scoreboard shows wins and ties
@@ -35,7 +35,7 @@ This project is a Tic Tac Toe game created using HTML, CSS/SAAS, and JavaScript.
 
 <img src="github/demo2.gif" alt=""/> <br/>
 
-- Result Modal
+- Result Modal: displays the result and the Quit and Next Round buttons
 
 <img src="github/demo3.gif" alt=""/> <br/>
 
