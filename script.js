@@ -299,7 +299,7 @@ const getWinningMove = array => {
   return winningMove;
 };
 
-const getPossibleBestMove = () => {
+const getBestMove = () => {
   // get the indexes occupied by player x
   const playerXIndexes = game.gameboard
     .map((item, index) => {
@@ -326,9 +326,9 @@ const computerMove = () => {
   do {
     index = Math.floor(Math.random() * (9 - 0 + 1));
   } while (game.gameboard[index] !== '');
-  // get possible best move
-  const bestMove = getPossibleBestMove();
-  // if a possible best move was found, index will be the bestMove, otherwise (bestMove === null) it'll continue to be the random index
+  // get best move
+  const bestMove = getBestMove();
+  // if a best move was found, index will be the bestMove, otherwise (bestMove === null) it'll continue to be the random index
   index = bestMove ?? index;
   game.gameboard[index] = game.currentPlayer;
   renderGameboard();
